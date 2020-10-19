@@ -1,0 +1,39 @@
+﻿<UserControl x:Class="CanvasWPF.UserControls.InfoCard"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CanvasWPF.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Border CornerRadius="20" Background="LightBlue"  BorderBrush="SteelBlue" BorderThickness="2" VerticalAlignment="Stretch">
+        <DockPanel MinWidth="300" MaxWidth="500">
+            <Grid  x:Name="topBar" Height="20" VerticalAlignment="Center" Background="LightBlue" DockPanel.Dock="Top" Margin="20,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="20"/>
+                    <ColumnDefinition Width="20"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <TextBlock FontSize="14" Text="Infocard - " VerticalAlignment="Center" Padding="5,0,0,0"></TextBlock>
+                <TextBlock x:Name="title" FontSize="14"  VerticalAlignment="Center" Grid.Column="1" Padding="0,0,5,0"></TextBlock>
+                <Border x:Name="btnMove" CornerRadius="0,0,20,20" Background="DarkSalmon"  BorderBrush="SteelBlue" BorderThickness="2,0,2,2" Grid.Column="2"
+                        VerticalAlignment="Top" Height="15" MouseEnter="btnMove_MouseEnter" MouseDown="btnMove_MouseDown" MouseUp="btnMove_MouseUp" MouseLeave="btnMove_MouseLeave"/>
+                <Border x:Name="btnPin" CornerRadius="10" Background="PaleGreen"  BorderBrush="SteelBlue" BorderThickness="2" Grid.Column="3" VerticalAlignment="Stretch" MouseUp="btnPin_MouseUp">
+                    <Image  x:Name="imgPin" Width="14" Height="14" Source="/CanvasWPF;component/Resources/images/unpin.png"/>
+                </Border>
+                <Border x:Name="btnCollapse" CornerRadius="10" Background="SandyBrown"  BorderBrush="SteelBlue" BorderThickness="2" Grid.Column="4" VerticalAlignment="Stretch" MouseUp="btnCollapse_MouseUp">
+                    <Image x:Name="imgCollapse" Width="14" Height="14" Source="/CanvasWPF;component/Resources/images/collapse.png"/>
+                </Border>
+            </Grid>
+            <Border CornerRadius="0" Background="LightBlue"  BorderBrush="SteelBlue" BorderThickness="0,2,0,2" Grid.Column="4" VerticalAlignment="Stretch" Margin="0,0,0,20">
+                <Grid x:Name="gCard" Background="Azure" >
+                </Grid>
+            </Border>
+        </DockPanel>
+    </Border>
+</UserControl>
